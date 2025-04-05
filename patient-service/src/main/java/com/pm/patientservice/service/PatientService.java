@@ -70,4 +70,13 @@ public class PatientService {
         return PatientMapper.toDTO(patient);
 
     }
+
+    public void deletePatient(UUID id){
+        // check whether the patient with the given id exists
+        Patient patient = patientRepository.findById(id)
+                .orElseThrow(()-> new PatientNotFoundException("Patient not found with ID: "+ id.toString()));
+
+        patientRepository.deleteById(id);
+
+    }
 }
