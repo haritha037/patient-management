@@ -14,7 +14,7 @@ public class AuthIntegrationTest {
     }
 
     @Test
-    public void shouldReturnOKWithValidToken(){
+    public void shouldReturnOKWithValidCredentials(){
         // 1. ARRANGE
         // 2. ACT
         // 3. ASSERT
@@ -41,7 +41,7 @@ public class AuthIntegrationTest {
     }
 
     @Test
-    public void shouldReturnUnauthorizedWithInvalidToken(){
+    public void shouldReturnUnauthorizedWithInvalidCredentials(){
         // 1. ARRANGE
         // 2. ACT
         // 3. ASSERT
