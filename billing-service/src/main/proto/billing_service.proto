@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+// split service, req, res into different files
+// by default - everything on the same file
+option java_multiple_files = true;
+
+// put all the code in a new package
+option java_package = "billing";
+
+// specify the service and its methods
+service BillingService {
+  rpc CreateBillingAccount (BillingRequest) returns (BillingResponse);
+}
+
+// describe the data types
+message BillingRequest {
+  string patientId = 1;
+  string name = 2;
+  string email = 3;
+}
+
+message BillingResponse {
+  string accountId = 1;
+  string status = 2;
+}
